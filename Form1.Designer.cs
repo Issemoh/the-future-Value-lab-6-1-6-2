@@ -44,7 +44,7 @@
             // 
             this.txtMonthlyInvestment.AutoSize = true;
             this.txtMonthlyInvestment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonthlyInvestment.Location = new System.Drawing.Point(89, 55);
+            this.txtMonthlyInvestment.Location = new System.Drawing.Point(88, 51);
             this.txtMonthlyInvestment.Name = "txtMonthlyInvestment";
             this.txtMonthlyInvestment.Size = new System.Drawing.Size(133, 17);
             this.txtMonthlyInvestment.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 95);
+            this.label2.Location = new System.Drawing.Point(88, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 17);
             this.label2.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 136);
+            this.label3.Location = new System.Drawing.Point(88, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(89, 183);
+            this.label4.Location = new System.Drawing.Point(88, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 17);
             this.label4.TabIndex = 3;
@@ -82,39 +82,43 @@
             // 
             // txtMonthlyInvesment
             // 
-            this.txtMonthlyInvesment.Location = new System.Drawing.Point(248, 48);
+            this.txtMonthlyInvesment.Location = new System.Drawing.Point(248, 45);
             this.txtMonthlyInvesment.Name = "txtMonthlyInvesment";
-            this.txtMonthlyInvesment.Size = new System.Drawing.Size(100, 20);
+            this.txtMonthlyInvesment.Size = new System.Drawing.Size(100, 17);
             this.txtMonthlyInvesment.TabIndex = 4;
+            this.txtMonthlyInvesment.TextChanged += new System.EventHandler(this.ClearFutureValue);
+            this.txtMonthlyInvesment.MouseHover += new System.EventHandler(this.ClearFutureValue);
             // 
             // txtInterestRate
             // 
-            this.txtInterestRate.Location = new System.Drawing.Point(248, 92);
+            this.txtInterestRate.Location = new System.Drawing.Point(248, 86);
             this.txtInterestRate.Name = "txtInterestRate";
-            this.txtInterestRate.Size = new System.Drawing.Size(100, 20);
+            this.txtInterestRate.Size = new System.Drawing.Size(100, 17);
             this.txtInterestRate.TabIndex = 5;
+            this.txtInterestRate.TextChanged += new System.EventHandler(this.ClearFutureValue);
+            this.txtInterestRate.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtInterestRate_MouseDoubleClick);
             // 
             // txtYears
             // 
-            this.txtYears.Location = new System.Drawing.Point(248, 136);
+            this.txtYears.Location = new System.Drawing.Point(248, 125);
             this.txtYears.Name = "txtYears";
-            this.txtYears.Size = new System.Drawing.Size(100, 20);
+            this.txtYears.Size = new System.Drawing.Size(100, 17);
             this.txtYears.TabIndex = 6;
             // 
             // txtFutureValue
             // 
-            this.txtFutureValue.Location = new System.Drawing.Point(248, 183);
+            this.txtFutureValue.Location = new System.Drawing.Point(248, 170);
             this.txtFutureValue.Name = "txtFutureValue";
             this.txtFutureValue.ReadOnly = true;
-            this.txtFutureValue.Size = new System.Drawing.Size(100, 20);
+            this.txtFutureValue.Size = new System.Drawing.Size(100, 17);
             this.txtFutureValue.TabIndex = 7;
             this.txtFutureValue.TabStop = false;
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(152, 242);
+            this.btnCalculate.Location = new System.Drawing.Point(152, 223);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(99, 23);
+            this.btnCalculate.Size = new System.Drawing.Size(99, 21);
             this.btnCalculate.TabIndex = 8;
             this.btnCalculate.Text = "Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
@@ -122,9 +126,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(293, 242);
+            this.btnExit.Location = new System.Drawing.Point(292, 223);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(92, 23);
+            this.btnExit.Size = new System.Drawing.Size(92, 21);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -132,9 +136,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(494, 415);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.txtFutureValue);
@@ -145,8 +149,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMonthlyInvestment);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.Text = "future value";
+            this.DoubleClick += new System.EventHandler(this.Form1_DoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 
